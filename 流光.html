@@ -1,0 +1,66 @@
+<html>
+
+<head>
+
+    <style>
+        .button {
+            background: linear-gradient(
+            to right,
+            #ff5f6d, #ffc371, #f6d365, #84fab0, #8fd3f4, #a1c4fd, #c2e9fb,
+            #ff5f6d /* 确保列表的开始和结束是相同的颜色 */
+            );
+            background-size: 400%;
+            color: white;
+            border: 0;
+            border-radius: 10px;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            margin: 10px;
+            transition: 0.5s;
+            z-index: 1;
+            border-radius: 40px;
+            position: absolute;
+        }
+
+        @keyframes shine {
+            from {
+                background-position: 0%;
+            }
+            to {
+                background-position: 400%; /* 调整这里以确保流畅衔接 */
+            }
+        }
+
+        .button:hover {
+            animation: shine 8s linear infinite;
+        }
+
+        .button::before {
+            content: '';
+            position: absolute;
+            inset: 1px;
+            background: linear-gradient(
+            to right,
+            #ff5f6d, #ffc371, #f6d365, #84fab0, #8fd3f4, #a1c4fd, #c2e9fb,
+            #ff5f6d /* 确保列表的开始和结束是相同的颜色 */
+            );
+            border-radius: 40px;
+            background-size: 400%;
+            opacity: 0;
+        }
+        .button:hover::before {
+            filter:blur(20px);
+            opacity: 1;
+            animation: shine 8s linear infinite;
+        }
+        </style>
+    </head>
+
+<body>
+    <button class="button">五彩流光按钮</button>
+</body>
+
+</html>
